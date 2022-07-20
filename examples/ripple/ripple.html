@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ripple Effect</title>
+  <style>
+    @import './styles/button.css';
+    @import './styles/ripple.css';
+  </style>
+
+  <script type="module">
+    import { startRipple, stopRipple } from './js/ripple.apis.js'
+
+    const button = document.querySelector('#ripple-example-button')
+
+    button.addEventListener('mousedown', startRipple)
+    button.addEventListener('focus', startRipple)
+    button.addEventListener('mouseup', stopRipple)
+    button.addEventListener('mouseleave', stopRipple)
+    button.addEventListener('blur', stopRipple)
+  </script>
+</head>
+
+<body>
+  <button class="button-root" id="ripple-example-button" type="button">
+    Button
+    <span class="ripple-root"></span>
+  </button>
+</body>
+
+</html>

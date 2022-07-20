@@ -1,0 +1,28 @@
+.button-root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.75;
+  min-width: 64px;
+  margin: 0;
+  border-radius: 4px;
+  border: 1px solid rgba(25, 118, 210, 0.5);
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+  appearance: none;
+  user-select: none;
+  color: #1976d2;
+  background-color: transparent;
+  transition-property: background-color, color, box-shadow, border-color;
+  transition-duration: 0.25s;
+}
+
+.button-root:hover {
+  background-color: rgba(25, 118, 210, 0.04);
+  border: 1px solid #1976d2;
+}
