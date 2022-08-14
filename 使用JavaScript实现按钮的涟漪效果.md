@@ -330,3 +330,7 @@ export function stopRipple() {
 ```
 
 我们完成了所有的功能！[完整的代码](https://github.com/nnmax/blogs/tree/main/examples/ripple)在此仓库中。
+
+也可以直接在 CodeSandbox 中编辑
+
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/material-ui-u9sy1h)
