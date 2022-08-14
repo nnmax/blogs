@@ -333,4 +333,4 @@ export function stopRipple() {
 
 也可以直接在 CodeSandbox 中编辑
 
-[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/material-ui-u9sy1h)
+[![Edit Button](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ripple-0osvzy)
