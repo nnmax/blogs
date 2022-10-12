@@ -89,12 +89,12 @@ const Users = ({ users }) => {
 对此，您应该将此逻辑抽离成自定义 Hooks。
 
 ```typescript
-// File: useStateListeningProp.ts
+// File: useProp.ts
 import { useState, useRef, useEffect } from "react";
 
-type StateListeningPropResult<T> = [T, React.Dispatch<React.SetStateAction<T>>];
+type UsePropResult<T> = [T, React.Dispatch<React.SetStateAction<T>>];
 
-const useStateListeningProp = <T>(prop: T): StateListeningPropResult<T> => {
+const useProp = <T>(prop: T): UsePropResult<T> => {
   const [state, setState] = useState<T>(prop);
   const previousPropRef = useRef<T>();
 
@@ -109,7 +109,7 @@ const useStateListeningProp = <T>(prop: T): StateListeningPropResult<T> => {
   return [state, setState];
 };
 
-export default useStateListeningProp;
+export default useProp;
 
 ```
 
@@ -118,14 +118,14 @@ export default useStateListeningProp;
 ```tsx
 // File: Users.tsx
 import React from "react";
-import useStateListeningProp from "./useStateListeningProp";
+import useProp from "./useProp";
 
 type User = { id: string; name: string };
 
 const Users: React.FC<{ users: User[] }> = (props) => {
   const { users: usersProp } = props;
 
-  const [users, setUsers] = useStateListeningProp(usersProp);
+  const [users, setUsers] = useProp(usersProp);
 
   const addUser = (userName: User['name']) => {
     setUsers((oldUsers) =>
@@ -161,4 +161,4 @@ const Users: React.FC<{ users: User[] }> = (props) => {
 
 ```
 
-本人开源了此自定义 hooks 的 npm 包 [use-state-listening-prop](https://www.npmjs.com/package/use-state-listening-prop)，可以在您的项目中使用 `npm install use-state-listening-prop ` 来安装并使用。
+本人开源了此自定义 hooks 的 npm 包 [use-prop](https://www.npmjs.com/package/use-prop)，可以在您的项目中使用 `npm install use-prop ` 来安装并使用。
